@@ -8,6 +8,7 @@ Godaddypy dns for the cheap in a docker container
 GODADDY_KEY=your_godaddy_key<br>
 GODADDY_SECRET=your_godaddy_secret<br>
 DOMAINS=test.example.com,table.cloth.be<br>
+TZ=Europe/Brussels<br>
 
 # links
 

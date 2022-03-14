@@ -2,7 +2,7 @@ FROM ubuntu:20.04
 MAINTAINER tim@chaubet.be
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
-RUN apt install -y python3 git python3-pip tzdata cron && \
+RUN apt install -y python3 git python3-pip tzdata cron vim && \
     rm -rf /var/lib/apt/lists/* && \
     apt clean
 RUN pip install pif
