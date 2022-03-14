@@ -1,6 +1,7 @@
 #!/bin/bash
 # https://github.com/eXamadeus/godaddypy
-touch /var/log/cron.log
+/usr/bin/touch /var/log/cron.log
+/usr/bin/chmod 777 /var/log/cron.log
 godaddykey_varname="GODADDY_KEY"
 godaddykey=${!godaddykey_varname}
 if [ -z ${godaddykey} ]; then
@@ -43,7 +44,7 @@ if [ ! -d godaddypy ]; then
 	cd ..
 fi
 
-echo "*/5 * * * * /usr/bin/python3 /godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains" > /etc/cron.d/godaddy-cron
+echo "*/5 * * * * /usr/bin/python3 /godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains > /var/log/cron.log 2>/var/log/cron.log" > /etc/cron.d/godaddy-cron
 echo " " >> /etc/cron.d/godaddy-cron
 /usr/bin/crontab /etc/cron.d/godaddy-cron
 /usr/sbin/cron -f
