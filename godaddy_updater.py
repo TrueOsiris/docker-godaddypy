@@ -58,8 +58,6 @@ def main():
         else:
             print ('updating record')
             try:
-                #test_del = client.delete_records(s, name='@', record_type='A')
-                #print('deleting record - '+str(test_del))
                 update_ip = client.update_record_ip(public_ip,s,s,typ)
                 update_ip = client.update_ip(public_ip,domains=[s])
             except:
@@ -67,7 +65,8 @@ def main():
         output1 = 'upd '+typ+' record for dom \x1b[1;33;40m'+s+'\x1b[0m to ip '+public_ip
         u=str(update_ip)
         output2 = 'Result: '+'\x1b[0;32;40m'+u+'\x1b[0m'
-        logging.basicConfig(filename='/logdir/godaddy.log',level=logging.DEBUG)
+#        logging.basicConfig(filename='/logdir/godaddy.log',level=logging.DEBUG)
+        logging.basicConfig(filename='/var/log/cron.log',level=logging.DEBUG)
         final_output=time.strftime("%c")+' '+output1+' '+output2
         print(final_output)
         logging.debug(final_output)

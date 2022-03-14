@@ -42,5 +42,11 @@ if [ ! -d godaddypy ]; then
 	cd ..
 fi
 
-/usr/bin/python3 godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains
+echo "*/5 * * * * /usr/bin/python3 /godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains" > /etc/cron.d/godaddy-cron
+echo " " >> /etc/cron.d/godaddy-cron
+touch /var/log/cron.log
+/usr/bin/crontab /etc/cron.d/godaddy-cron
+/usr/sbin/cron -f
+/usr/bin/tail -f /var/log/cron.log
+
 
