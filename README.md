@@ -17,3 +17,8 @@ dockerhub repo: https://hub.docker.com/repository/docker/trueosiris/godaddypy <b
 
 I'm using the following base repo, so credits go to this dev:<br>
 https://github.com/eXamadeus/godaddypy
+
+# log
+
+Python script log arrives in /logdir/godaddy.log.<br>
+The logdir folder can be defined as an external volume.
