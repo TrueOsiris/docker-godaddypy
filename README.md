@@ -8,3 +8,11 @@ Godaddypy dns for the cheap in a docker container
 GODADDY_KEY=your_godaddy_key<br>
 GODADDY_SECRET=your_godaddy_secret<br>
 DOMAINS=test.example.com,table.cloth.be<br>
+
+#links
+
+github repo: https://github.com/TrueOsiris/docker-godaddypy <br>
+dockerhub repo: https://hub.docker.com/repository/docker/trueosiris/godaddypy <br>
+
+I'm using the following base repo, so credits go to this dev:<br>
+https://github.com/eXamadeus/godaddypy
