@@ -11,5 +11,6 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 COPY godaddy_updater.py /godaddy_updater.py
 RUN chmod +x /godaddy_updater.py
+VOLUME ["/logdir"]
 CMD ["./start.sh"]
 
