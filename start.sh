@@ -51,6 +51,6 @@ echo "30 * * * * /usr/sbin/logrotate /etc/logrotate.d/godaddypy" >> /etc/cron.d/
 echo " " >> /etc/cron.d/godaddy-cron
 echo $'/logdir/*.log {\n  rotate 7\n  daily\n  missingok\n  notifempty\n  create\n}' > /etc/logrotate.d/godaddypy
 /usr/bin/crontab /etc/cron.d/godaddy-cron
-#/usr/sbin/cron -f
-#/usr/bin/tail -f /var/log/cron.log
+/usr/sbin/cron -f
+/usr/bin/tail -f /var/log/cron.log
 
