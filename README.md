@@ -13,7 +13,7 @@ Godaddypy ddns for the cheap in a docker container
 ### environment variables
 
 | Environment Variable | Key | Description |
-| -------------------- | ----------------------------:| ------------------------------------------------------------------------------- |
+| -------------------- | ---------------------------- | ------------------------------------------------------------------------------- |
 | GODADDY_KEY | your_godaddy_key | godaddy api key |
 | GODADDY_SECRET | your_godaddy_secret | godaddy api secret |
 | DOMAINS | test.example.com,table.cloth.be | comma delimited list of domains to receive the A record |
