@@ -1,7 +1,7 @@
 # docker-godaddypy<br>
 Godaddypy ddns for the cheap in a docker container
 
-![Trueosiris Rules](https://img.shields.io/badge/trueosiris-rules-f080a0) 
+![Trueosiris Rules](https://img.shields.io/badge/trueosiris-rules-f08060) 
 [![Docker Pulls](https://badgen.net/docker/pulls/trueosiris/godaddypy?icon=docker&label=pulls)](https://hub.docker.com/r/trueosiris/godaddypy/) 
 [![Docker Stars](https://badgen.net/docker/stars/trueosiris/godaddypy?icon=docker&label=stars)](https://hub.docker.com/r/trueosiris/godaddypy/) 
 [![Docker Image Size](https://badgen.net/docker/size/trueosiris/godaddypy?icon=docker&label=image%20size)](https://hub.docker.com/r/trueosiris/godaddypy/) 
