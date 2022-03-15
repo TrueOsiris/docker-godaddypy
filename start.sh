@@ -43,9 +43,13 @@ if [ ! -d godaddypy ]; then
 	python3 setup.py install
 	cd ..
 fi
-
+echo " "
+echo "godaddypy logs will arrive in /logdir"
+echo " "
 echo "*/5 * * * * /usr/bin/python3 /godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains > /var/log/cron.log 2>/var/log/cron.log" > /etc/cron.d/godaddy-cron
+echo "30 * * * * /usr/sbin/logrotate /etc/logrotate.d/godaddypy" >> /etc/cron.d/godaddy-cron
 echo " " >> /etc/cron.d/godaddy-cron
+echo $'/logdir/*.log {\n  rotate 7\n  daily\n  missingok\n  notifempty\n  create\n}' > /etc/logrotate.d/godaddypy
 /usr/bin/crontab /etc/cron.d/godaddy-cron
 /usr/sbin/cron -f
 /usr/bin/tail -f /var/log/cron.log
