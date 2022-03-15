@@ -5,6 +5,7 @@ import logging
 import pif
 import sys
 import getopt
+import os
 from godaddypy import Client, Account
 
 # https://docs.python.org/2/library/logging.html
@@ -16,7 +17,7 @@ def main():
     gsec = ''
     domains = ''
     try:
-        opts, args = getopt.getopt(sys.argv[1:], "k:s:d:", ["gkey", "gsec", "domains"])
+        opts, args = getopt.getopt(sys.argv[1:], "k:s:d:t:", ["gkey", "gsec", "domains", "timezone"])
     except getopt.GetoptError as err:
         print (err)
         print ("usage:")
@@ -29,7 +30,9 @@ def main():
             gsec = a
         elif o in ("-d","--domains"):
             domains = a
-            print(domains)
+        elif o in ("-t","--timezone"):
+            os.environ['TZ'] = a
+            time.tzset()
         else:
             assert False, "unhandled option"
             sys.exit(2)

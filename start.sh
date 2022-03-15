@@ -26,6 +26,13 @@ if [ -z ${domains} ]; then
 else
 	echo "domains = $domains"
 fi
+tz_varname="TZ"
+tz=${!tz_varname}
+if [ -z ${tz} ]; then
+	echo "Timezone not set. Defaulting to Europe/Brussels"
+	tz="Europe/Brussels"
+fi
+echo "timezone is $tz"
 
 if [ ! -d "/logdir" ]; then
 	mkdir /logdir
@@ -46,7 +53,7 @@ fi
 echo " "
 echo "godaddypy logs will arrive in /logdir"
 echo " "
-echo "*/5 * * * * /usr/bin/python3 /godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains > /var/log/cron.log 2>/var/log/cron.log" > /etc/cron.d/godaddy-cron
+echo "*/5 * * * * /usr/bin/python3 /godaddy_updater.py -k $godaddykey -s $godaddysecret -d $domains -t \"$tz\" > /var/log/cron.log 2>/var/log/cron.log" > /etc/cron.d/godaddy-cron
 echo "30 * * * * /usr/sbin/logrotate /etc/logrotate.d/godaddypy" >> /etc/cron.d/godaddy-cron
 echo " " >> /etc/cron.d/godaddy-cron
 echo $'/logdir/*.log {\n  rotate 7\n  daily\n  missingok\n  notifempty\n  create\n}' > /etc/logrotate.d/godaddypy
