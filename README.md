@@ -10,7 +10,7 @@ Godaddypy ddns for the cheap in a docker container
 ![Github stars](https://badgen.net/github/stars/trueosiris/docker-godaddypy?icon=github&label=stars) 
 ![Github forks](https://badgen.net/github/forks/trueosiris/docker-godaddypy?icon=github&label=forks) 
 ![Github issues](https://img.shields.io/github/issues/TrueOsiris/docker-godaddypy)
-![Github last-commit]((https://img.shields.io/github/last-commit/TrueOsiris/docker-godaddypy)
+![Github last-commit](https://img.shields.io/github/last-commit/TrueOsiris/docker-godaddypy)
 
 ### environment variables
 
