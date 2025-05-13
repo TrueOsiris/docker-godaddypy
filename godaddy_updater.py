@@ -2,7 +2,7 @@
 
 import time
 import logging
-import pif
+import requests
 import sys
 import getopt
 import os
@@ -47,8 +47,12 @@ def main():
     client = Client(my_acct)
     s = client.get_domains()
 #    print ('domains: '+str(s))
-    public_ip = pif.get_public_ip()
-#    print(public_ip)
+    try:
+        public_ip = requests.get("https://api.ipify.org").text.strip()
+    except requests.RequestException as e:
+        print("Error retrieving public IP:", e)
+        sys.exit(1)
+    print(public_ip)
     for t in dom:
         update_ip = 'unset'
         s=str(t)
